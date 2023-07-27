@@ -3,7 +3,7 @@
 This Java project shows an example of how to build a plugin for the Structurizr on-premises installation.
 A plugin is an implementation of the `com.structurizr.onpremises.plugin.WorkspaceEventListener` interface,
 with the `beforeSave()` method being called before the workspace is saved.
-See [ExampleWorkspaceEventListener.java](blob/main/src/main/java/org/example/ExampleWorkspaceEventListener.java) for an example.
+See [ExampleWorkspaceEventListener.java](src/main/java/org/example/ExampleWorkspaceEventListener.java) for an example.
 
 ## Building the plugin
 
