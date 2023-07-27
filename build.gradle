@@ -9,6 +9,18 @@ repositories {
     mavenCentral()
 }
 
+task downloadPluginsJar() {
+    File file = new File("lib/structurizr-onpremises-plugins.jar")
+    file.parentFile.mkdirs()
+    if (!file.exists()) {
+        new URL("https://github.com/structurizr/onpremises/raw/main/lib/structurizr-onpremises-plugins.jar").withInputStream { downloadStream ->
+            file.withOutputStream { fileOut ->
+                fileOut << downloadStream
+            }
+        }
+    }
+}
+
 dependencies {
     implementation 'com.structurizr:structurizr-client:1.25.1'
     implementation files('lib/structurizr-onpremises-plugins.jar')
@@ -19,4 +31,8 @@ dependencies {
 
 test {
     useJUnitPlatform()
+}
+
+tasks.matching { it.name == 'build' }.all { Task task ->
+    task.dependsOn downloadPluginsJar
 }

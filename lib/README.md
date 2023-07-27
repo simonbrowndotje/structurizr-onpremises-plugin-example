@@ -1,1 +1,0 @@
-The structurizr-onpremises-plugins.jar file is from https://github.com/structurizr/onpremises/blob/main/lib/structurizr-onpremises-plugins.jar
