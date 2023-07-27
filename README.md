@@ -1,0 +1,1 @@
+# structurizr-onpremises-plugin-example
