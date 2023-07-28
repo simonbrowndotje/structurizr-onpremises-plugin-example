@@ -2,8 +2,9 @@ package org.example;
 
 import com.structurizr.Workspace;
 import com.structurizr.configuration.Role;
-import com.structurizr.onpremises.plugin.WorkspaceEvent;
-import com.structurizr.onpremises.plugin.WorkspaceEventListener;
+import com.structurizr.configuration.Visibility;
+import com.structurizr.onpremises.component.workspace.WorkspaceEvent;
+import com.structurizr.onpremises.component.workspace.WorkspaceEventListener;
 import com.structurizr.util.WorkspaceUtils;
 
 public class ExampleWorkspaceEventListener implements WorkspaceEventListener {
@@ -18,8 +19,8 @@ public class ExampleWorkspaceEventListener implements WorkspaceEventListener {
 
             // configure workspace access
             workspace.getConfiguration().clearUsers();
+            workspace.getConfiguration().setVisibility(Visibility.Public);
             workspace.getConfiguration().addUser("user1@example.com", Role.ReadWrite);
-            workspace.getConfiguration().addUser("^.*@example.com$", Role.ReadOnly);
 
             // re-serialize the Workspace object back to JSON, and override original version
             json = WorkspaceUtils.toJson(workspace, false);

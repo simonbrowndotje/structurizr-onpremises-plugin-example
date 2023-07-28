@@ -22,7 +22,7 @@ task downloadPluginsJar() {
 }
 
 dependencies {
-    implementation 'com.structurizr:structurizr-client:1.25.1'
+    implementation 'com.structurizr:structurizr-client:1.26.1'
     implementation files('lib/structurizr-onpremises-plugins.jar')
 
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.2'
